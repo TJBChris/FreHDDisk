@@ -1,0 +1,8 @@
+This file outlines what each of the image files here do.
+
+m1-frehd-boot.dmk - Model I Boot Disk 
+m3-frehd-boot.dmk - Model III Boot Disk 
+m4-frehd-boot.dmk - Model 4/4GA/4D Boot Disk
+m4p-frehd-boot.dmk - Model 4P Boot Disk 
+
+The Models I, III and 4P disks have been boot-tested, but I do not have these machines and therefore have not tested on real systems with a FreHD.
