@@ -61,7 +61,7 @@ Once you've set your emulator up and have EDAS up and running, copy FREHD/ASM to
 
 1. By default, FREHD/ASM is configured for a Model 4 loading at 4300H.  If this doesn't work for your system, tailor FreHD for your system using the SAID editor:
   - Set the **ORG** address to 4300H for Models III/4, or 4200H for Model I.
-  - For Model 4P, comment out the line to clear the screen, put the START label on the next instruction.
+  - Change the third byte (the operand of the first CP instruction) to match the location of the directory track the disk image to which you'll be writing the boot track.  For stock LDOS 5.3 disks (which I used for Models III/4/4P), use 14H (track 20).  For stock TRSDOS 2.3 disks (which I used for Model I), use 11H (track 17).  Your track may vary depending on the disk you use as a source.
   - Find the **MODEL** EQUate and set it as follows:
     - 1 - Model I (see considerations below if you plan to create a boot disk)
     - 3 - Model III
@@ -85,16 +85,21 @@ Once you've got a working FREHD/CMD, you have three choices:
  - When you run FREHD/CMD from LDOS, and then choose to boot to Model III LDOS from the FreHD boot menu, the machine will beign to boot LDOS from FreHD and crash (either freeze or reboot) on a Model 4.  I'm not sure why this is, or whether it will happen on other systems.
  - I used the blank LDOS 5.3.1 disk image in **trs80gp** as the basis of the Model III/4/4P disk images.
  - I used a TRSDOS 2.3 blank disk in **trs80gp** as the basis of the Model I image.
+ - Model I will not clear the screen before booting like newer models do.  Therefore, you'll see the boot messages/errors surrounded by '@' symbols.  This is not an error with the disk, and it works just fine.
 
 ### FreHD
 You must set your FreHD up as though you were going to be booting from a system with a modified ROM.  This means **frehd.rom** must be present in the root of the SD card (for physical FreHD) or network share (TRS-IO).  In addition, the bootable disk images for your various operating systems (LDOS, CP/M, LS-DOS, etc.) must be present and acceptable to frehd.rom.
+
+If you're using TRS-IO, make sure the following requirements are met for the SMB share where your frehd.rom and disk images will be:
+ - Don't use a hyphen in the name of the folder or share name.
+ - The folder should be top-level (that is, it should be accessible via \\servername\sharename).
 
 ## Wishlist
 My wishlist, if I were to persue it, might look like this:
 
 - Auto-detect the TRS-80 Model FreHDDisk is running on and set MODEL accordingly.
 - I'm not sure of the capabilities of the assembler, but the ability to "parameterize" the ORG address based on a passed-in parameter would be neat.
-- Not crash when running FREHD/CMD from Model III LDOS and choosing Model III LDOS from the FreHD boot menu.
+- Not crash when running FREHD/CMD from Model III LDOS and choosing Model III LDOS from the FreHD boot menu. (I've since learned this happens outside of my boot disks; this may be an issue with the state of the system when booting LDOS 5.3 from FreHD from a prevoius instance of an OS.)
 
 ## Thanks
 I hope this is useful for someone.  I did it because I wanted to see if I could.  It's actually the first useful anything I've written in assembly language, and my very first Z80 assembly project.  As a simple one, it made the perfect project. 

@@ -1,0 +1,9 @@
+CHANGES.TXT
+
+This file outlines any changes I have made to the project.
+
+Date     -  Changes
+=================================================================================================
+
+11/2020  -  Original version; boot sector did not contain directory track indicator per standard.
+11/2022  -  Updated source code to include directory track indication; removed clear screen. 

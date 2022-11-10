@@ -5,4 +5,4 @@ m3-frehd-boot.dmk - Model III Boot Disk
 m4-frehd-boot.dmk - Model 4/4GA/4D Boot Disk
 m4p-frehd-boot.dmk - Model 4P Boot Disk 
 
-The Models I, III and 4P disks have been boot-tested, but I do not have these machines and therefore have not tested on real systems with a FreHD.
+The Models I, III and 4P disks have been boot-tested in trs80gp, but I do not have these machines and therefore have not tested on real systems with a FreHD.  Note that I have written the routine to track zero, both secotrs zero and one, on all images per a request to do so.
