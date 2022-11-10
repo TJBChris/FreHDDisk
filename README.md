@@ -95,7 +95,7 @@ If you're using TRS-IO, make sure the following requirements are met for the SMB
  - The folder should be top-level (that is, it should be accessible via \\servername\sharename).
 
 ### Disk Format
-One thing I learned in this project is that TRS-80 disk images have a standard for the first few sectors of a diskette, which indicate the location of the directory.  My original disks were just my assembled code dumped to the first six sectors of track zero, and as such violated this.  Some operating systems are more tolerant of this violation than others; the ones I tested seemed OK.  That said, some operating systems don't react well (as expected) when the encouter a disk where the directory info isn't there.  
+One thing I learned in this project is that TRS-80 disk images have a standard for the first few sectors of a diskette, which indicate the location of the directory.  My original disks were just my assembled code dumped to the first six sectors of track zero, and as such violated this.  Some operating systems are more tolerant of this violation than others; the ones I tested seemed OK.  That said, some operating systems don't react well (as expected) when they encouter a disk where the directory info isn't there.  
 
 So, if you run into this issue in your OS, the solution is simple:
  - Eject my FreHD boot disk, then retry your disk I/O.  The images have been updated to address this, but if you still have issues...ejecting the disk is your workaround.
