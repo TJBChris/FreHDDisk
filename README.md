@@ -18,7 +18,7 @@ https://github.com/apuder/TRS-IO/issues/23
 
 FREHD/ASM contains the equivalent of the BASIC program found in the discussion link above.  It initiates a ROM transfer from the FreHD device, copies it to the RAM in your system, and jumps to the downloaded code.  If it cannot verify the presence of a FreHD device, it displays an error and halts the system.  A reset is required to break out of this state.
 
-Assembled as a standlone file, FREHD/CMD, you can run it via LDOS 5.3.1 (I have not tested other operating systems).  Please note that I did have issues booting LDOS 5 images from FreHD after having booted to LDOS on a floppy and running FREHD/CMD.  However, on my Model 4, LSDOS 6 and CP/M did boot correctly when run from LDOS 5.3.1.
+Assembled as a standlone file, FREHD/CMD, you can run it via LDOS 5.3.1 (I have not tested other operating systems) **on all models except the 4P**.  Please note that I did have issues booting LDOS 5 images from FreHD after having booted to LDOS on a floppy and running FREHD/CMD.  However, on my Model 4, LSDOS 6 and CP/M did boot correctly when run from LDOS 5.3.1.
 
 
 The object code of FREHD/CMD (minus the 12-byte /CMD header) can be written directly to track 0 of a floppy disk (or disk image) using a utlity such as Super Utility.  In this case, the TRS-80's standard boot ROM will load the code into the buffer location (4300H for Models III/4, 4200H for Model I) and jump to it.  
@@ -67,7 +67,7 @@ Once you've set your emulator up and have EDAS up and running, copy FREHD/ASM to
 
 Once you've got a working FREHD/CMD, you have three choices:
 
-1. **Manual method** - Run it manually from your LDOS boot disk. 
+1. **Manual method** - Run it manually from your LDOS boot disk. **Does not work on the Model 4P**
 2. **LDOS auto boot disk method** - Create an LDOS boot disk for your system with FREHD/CMD on it, disable the date and time prompts, SYSTEM SYSGEN it, and set the AUTO function to run FREHD/CMD on boot up.
 3. **Boot track method** - Write the bytes from FreHD/CMD, less the /CMD header, to the first logical sector of track 0 on a blank, formatted disk using Super Utility or another utility.  The scope of this is beyond this document.  
 
