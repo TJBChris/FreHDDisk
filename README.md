@@ -16,14 +16,21 @@ The Model 4P is a unique beast.  It does not have the Model III ROMs built in; i
 There are two disks for the 4P in the disk_images directory:
 
 * m3-4p-frehd-boot.dmk - Contains MODELA/III and uses the x'CDxx00' byte sequence to coax the 4P's boot ROM into loading the file.  This is slower, but is the most compatible.  It uses Tandy's method to get the Model III ROMs in place from MODELA/III.
-* alt_m4p directory - Contains an earlier version of the boot disk along with a **required** patched copy of frehd.rom.  Place this updated copy of frehd.rom on your FreHD SD card/in the network directory w/ your FreHD files (TRS-IO) and the disk image in this directory will work.  It's faster, but as it's a patch, there may be unexpected compatibilty issues.  For most use cases, this should work well. 
+* alt_m4p directory - Contains an earlier version of the boot disk along with a **required** patched copy of frehd.rom.  Place this updated copy of frehd.rom on your FreHD SD card/in the network directory w/ your FreHD files (TRS-IO) and the disk image in this directory will work.  It's faster, but as it's a patch, there may be unexpected compatibilty issues.  For most use cases, this should work well.  **If it doesn't work, please try the other disk before you reach out.**
 
-Further making the 4P unique is the added ability to boot from a hard disk.  This feature went unused by Radio Shack, but is used now and it complicates things.  Beaause of this feature, rebooting a 4P after having selected a hard disk image from the FreHD menu will result in a blank screen.  This is because the 4P sees the mounted hard disk image and attempts to boot it.  Model 4 hard disk images seem most likely to trigger this behavior.  To avoid this and re-run the disk routine, **hold the 2 key while you reboot your 4P**.
+Further making the 4P unique is the added ability to boot from a hard disk.  This feature went unused by Radio Shack, but is used now and it complicates things.  Beaause of this feature, rebooting a 4P after having selected a hard disk image from the FreHD menu will result in a blank screen.  This is because the 4P sees the mounted hard disk image and attempts to boot it.  Model 4 hard disk images seem most likely to trigger this behavior.  To avoid this, you have two choices:
+
+* Reboot your 4P and **press the 2 key after the screen clears while you reboot your 4P**.
+* Run **REBOOT/CMD**, which is included on the 4P disks.  This is a nifty utility by Pete Cervasio.  **REBOOT/CMD** unmounts the active FreHD image and initiates a reboot.  
+
+
   
 ## Support
-This project is technically **unsupported**.  I do try and provide best-effort support when things break, like when I broke Multi-DOS because I didn't put the correct byte sequence in the booth track.  Oh, and the the updates to make the disks play nicer with the TRS-80 Model 4P.  That said, don't expect perfection.  Fixes are not guaranteed.  Like **dload_server**, this project was done to "see if I could do it".  I've put together some disk images for other systems as a courtesy in the hopes that this would be useful for you, but this is done as a courtesy.  All of this means that I will probably lose interest and move on as soon as the next shiny object attracts my attention.  
+I do try and provide best-effort support when things break, like when I broke MultiDOS because I didn't put the correct byte sequence in the booth track.  Oh, and the updates to make the disks play nicer with the TRS-80 Model 4P.  
 
-That said, I'm happy to answer questions when I can.  I hope this is of use to anyone who does not want to physically modify their machines, but also would like to make use of the FreHD boot menu without typing in a program or loading one from cassette every time you reset your system.  If you have lots of problems, consider putting a FreHD Auto Boot ROM into your 4P.  The experience is much better than my disks.
+I'll probably try to fix it when it's really broken on a stock system.  But like **dload_server**, this project was done to "see if I could do it".  I've put together some disk images for other systems as a courtesy in the hopes that this would be useful for you, but this is done as a courtesy.  All of this means that I will probably lose interest and move on as soon as the next shiny object attracts my attention.  
+
+I hope this is of use to anyone who does not want to physically modify their machines, but also would like to make use of the FreHD boot menu without typing in a program or loading one from cassette every time you reset your system.  If you have lots of problems, consider putting a FreHD Auto Boot ROM into your system.  The experience is much better than my disks.
 
 This project is subject to the GNU Public License V3.  You're free to contribute to it or use it (provided proper attribution remains in place and the license accompanies your work).  See the LICENSE file for full details.
 
