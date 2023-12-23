@@ -8,4 +8,5 @@ Date     -  Changes
 11/2020  -  Original version; boot sector did not contain directory track location as it should have per standard.
 11/2022  -  Updated source code to include directory track indication; removed clear screen.
 11/2022  -  Re-factored code to simply assembly without edits.  Simply assemble the MODELx/ASM file. 
-12/2013  -  Model 4P boot disk fixes to allow booting of Model III OS (LDOS, etc.) using the disks.  Thanks, maboytim!
+12/2023  -  Combined Model III and Model 4P boot disks into one, incorporating fixes to allow booting of Model III OS (LDOS, etc.) on the 4P using the disk.  Thanks, Matt Boytim and Peter Cervasio for your help!
+			Original 4P disk is moved to alt_4p directory along with a frehd.rom patched by Matt Boytim to allow it to work.  See doc for details.
