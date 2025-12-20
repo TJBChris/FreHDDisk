@@ -74,7 +74,7 @@ You can build FreHDDisk using the **EDAS** assembler:
 https://www.tim-mann.org/misosys.html
 
 You can find **TRSTools**, for working with TRS-80 Disk images, here:
-http://www.trs-80emulators.com/trstools/
+https://www.trs-80.com/main-emulation-disk-utilities.htm
 
 Please note I'm not the author for any of the above tools; these links are a courtesy.  Please contact the authors of the above if you have any issues setting them up.
 
